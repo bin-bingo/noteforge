@@ -1,0 +1,9 @@
+{"ts":"2026-03-17T23:29:00+08:00","agent":"kb-whisper-fallback","action":"video.py添加Whisper fallback","result":"完成","detail":"添加了_transcribe_with_whisper()和_download_audio()函数；在VideoPipeline.process()中，字幕提取失败时自动fallback到音频下载+Whisper转写；优先使用faster-whisper，ImportError时回退到openai-whisper，两者都没有则给出友好提示"}
+{"ts":"2026-03-17T23:29:00+08:00","agent":"kb-whisper-fallback","action":"更新pyproject.toml","result":"完成","detail":"video依赖从openai-whisper改为faster-whisper>=1.0.0；新增whisper单独依赖组；all组同步更新"}
+{"ts":"2026-03-17T23:29:00+08:00","agent":"kb-whisper-fallback","action":"更新README.md安装方式","result":"完成","detail":"新增'安装方式'章节，说明Core/Standard/Full四层安装；添加各可选包说明表格；说明系统Chrome支持；开发安装改为pip install -e '.[dev,all]'"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"修复管线参数不一致","result":"完成","detail":"OCRPipeline.__init__ 参数从 use_llm 改为 generate_annotations，内部统一为 self.generate_ann；router.py 传递 generate_annotations 和 model 参数给 OCRPipeline"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"完善CLI入口","result":"完成","detail":"新增 kb --version/-V；新增 config set 命令；sys.argv 预处理实现 kb <url> 直接调用；帮助信息包含示例；无参数显示帮助；友好错误提示"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"验证pip install -e .","result":"成功","detail":"pyproject.toml 完善，kb 命令可用，hatchling 构建后端正常"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"真实URL测试","result":"2/3成功","detail":"httpbin.org/html 3734字; sspai.com 225字(需JS); blog.rust-lang.org 366字"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"Whisper fallback验证","result":"完成","detail":"_transcribe_with_whisper 和 _download_audio 函数可用；ImportError 处理正确；VideoPipeline 参数统一"}
+{"ts":"2026-03-18T00:10:00+08:00","agent":"kb-phase3-dev","action":"更新Phase 3文档","result":"完成","detail":"TASKS.md Phase 3 标记为进行中，5项任务完成；新增 CHANGELOG_2026-03-18.md；追加 log.jsonl"}
